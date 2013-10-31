@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/item_leave_llStartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_launcher" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/item_leave_llEndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/item_leave_llStartDate"
+        android:background="@drawable/ic_launcher" >
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/tem_leave_ivType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/item_leave_llEndDate"
+        android:background="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/item_leave_tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_leave_llStartDate"
+        android:text="@string/sample_description" />
+
+</RelativeLayout>

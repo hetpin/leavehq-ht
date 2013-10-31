@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General -->
+    <color name="bg_main_grey">#f3f3f3</color>
+    <color name="dialog_divider">#cdcdcd</color>
+    <color name="text_main">#000000</color>
+    <color name="text_inferior">#666666</color>
+    <color name="text_description">#999999</color>
+
+    <!-- The default background of the menu. -->
+    <color name="md__defaultBackground">#FF555555</color>
+    <color name="white">#FFFFFF</color>
+    <!-- <color name="text_show">#7B7A7A</color> -->
+    <color name="text_show">#7B7A7A</color>
+    <color name="text_hyper_link">#0064c1</color>
+    <color name="bg_all">#DCDADA</color>
+    <color name="orange">#FF9A00</color>
+    <color name="dialog_bg">#f7f7f7</color>
+
+    <!-- For gray white label -->
+    <color name="gray_white">#666666</color>
+    <color name="divider">#959595</color>
+    <!-- text color all item the same gray color -->
+    <color name="pms_due_text_gray">#b7b7b7</color>
+    <color name="text_mist_color">#7B7A7A</color>
+    <color name="bg_color_gray_white_x">#F0F0F0</color>
+    <color name="text_blue_mail">#0064C1</color>
+    <color name="black">#000000</color>
+    <color name="img_border_gray">#E6E6E6</color>
+    <color name="wo_subtitle_gray">#999999</color>
+    <color name="yellow_dialog">#FFFA8E</color>
+    <!-- Note -->
+    <color name="note_line">#cacaca</color>
+    <color name="note_bg">#faf4b5</color>
+    <color name="note_text_msg">#8b8978</color>
+    <color name="note_vertical_line">#d69477</color>
+    <color name="wolist_left_menu_bg">#757575</color>
+    <color name="black_overlay">#66000000</color>
+
+    <!-- zxing -->
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="possible_result_points">#c0ffbd21</color> <!-- Android standard ICS color -->
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c099cc00</color> <!-- Android standard ICS color -->
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="viewfinder_laser">#ffcc0000</color> <!-- Android standard ICS color -->
+    <color name="viewfinder_mask">#60000000</color>
+
+</resources>

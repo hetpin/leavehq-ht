@@ -1,0 +1,5 @@
+package com.leave.leaveapp.utility;
+
+public class Constant {
+	public static String LOGIN_URL = "http://app.leavehq.com/api/user/loginByEmail"; 
+}

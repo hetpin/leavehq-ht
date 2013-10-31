@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main_grey"
+    android:orientation="vertical"
+    tools:context=".ViewLeaveActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_top_bar"
+        android:background="@color/white" >
+
+        <ImageView
+            android:id="@+id/view_leave_ivBack"
+            android:layout_width="@dimen/height_home_top_icon"
+            android:layout_height="@dimen/height_home_top_icon"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_calendar" />
+
+        <ImageView
+            android:id="@+id/view_leave_ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_home_top_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/txt_leavehq" />
+
+        <TextView
+            android:id="@+id/view_leave_tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Type" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/view_leave_lvLeave"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+    </ListView>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/list_f5"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+</LinearLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main_grey"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_top_bar"
+        android:background="@color/white" >
+
+        <ImageView
+            android:id="@+id/home_ivCalendar"
+            android:layout_width="@dimen/height_home_top_icon"
+            android:layout_height="@dimen/height_home_top_icon"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_calendar" />
+
+        <ImageView
+            android:id="@+id/home_ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_home_top_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/txt_leavehq" />
+
+        <ImageView
+            android:id="@+id/home_ivSetting"
+            android:layout_width="@dimen/height_home_top_icon"
+            android:layout_height="@dimen/height_home_top_icon"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_setting" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_home_box" >
+
+        <EditText
+            android:id="@+id/home_etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_home_search"
+            android:background="@drawable/edt_search_nine"
+            android:hint="@string/hint_search"
+            android:paddingLeft="@dimen/padding_left_edittext_search" />
+
+        <ImageView
+            android:id="@+id/home_ivViewLeave"
+            android:layout_width="@dimen/height_home_button_size"
+            android:layout_height="@dimen/height_home_button_size"
+            android:layout_below="@id/home_etSearch"
+            android:layout_marginTop="@dimen/margin_home_box"
+            android:background="@drawable/btn_view_leave" />
+
+        <ImageView
+            android:id="@+id/home_ivBeacon"
+            android:layout_width="@dimen/height_home_button_size"
+            android:layout_height="@dimen/height_home_button_size"
+            android:layout_below="@id/home_etSearch"
+            android:layout_marginLeft="@dimen/margin_home_box"
+            android:layout_marginTop="@dimen/margin_home_box"
+            android:layout_toRightOf="@id/home_ivViewLeave"
+            android:background="@drawable/btn_beacon" />
+
+        <ImageView
+            android:id="@+id/home_ivEvacuate"
+            android:layout_width="@dimen/height_home_button_size"
+            android:layout_height="@dimen/height_home_button_size"
+            android:layout_below="@id/home_ivViewLeave"
+            android:layout_marginTop="@dimen/margin_home_box"
+            android:background="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/home_ivLeave"
+            android:layout_width="@dimen/height_home_button_size"
+            android:layout_height="@dimen/height_home_button_size"
+            android:layout_below="@id/home_ivViewLeave"
+            android:layout_marginLeft="@dimen/margin_home_box"
+            android:layout_marginTop="@dimen/margin_home_box"
+            android:layout_toRightOf="@id/home_ivViewLeave"
+            android:background="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/home_ivDamage"
+            android:layout_width="@dimen/height_home_button_size"
+            android:layout_height="@dimen/height_home_button_size"
+            android:layout_below="@id/home_ivEvacuate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_home_box"
+            android:background="@drawable/ic_launcher" />
+    </RelativeLayout>
+
+</LinearLayout>
