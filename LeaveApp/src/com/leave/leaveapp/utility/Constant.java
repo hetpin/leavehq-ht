@@ -8,5 +8,7 @@ public class Constant {
 
 	public static final String LEAVE_URL = "leave/list";
 
+	public static final String DOCTORS_URL = "doctor/list";
+
 	public static String TOKEN = "";
 }

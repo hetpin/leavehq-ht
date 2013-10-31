@@ -10,6 +10,7 @@ import android.util.JsonReader;
 import android.util.JsonToken;
 import android.util.Log;
 
+import com.leave.leaveapp.model.Doctor;
 import com.leave.leaveapp.model.LeaveModel;
 import com.leave.leaveapp.utility.Constant;
 import com.leave.leaveapp.utility.NetworkUtils;
@@ -34,7 +35,7 @@ public class LeaveService {
 			Log.i(TAG, "inputStream: " + inputStream);
 			JsonReader reader = new JsonReader(new InputStreamReader(
 					inputStream, "UTF-8"));
-			list = readResponse(reader);
+			list = readLeaveResponse(reader);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -43,7 +44,108 @@ public class LeaveService {
 		return list;
 	}
 
-	private ArrayList<LeaveModel> readResponse(JsonReader reader)
+	public ArrayList<Doctor> getDoctors() {
+		String getDoctorsURL = Constant.BASE_URL + Constant.DOCTORS_URL
+				+ "?token=" + Constant.TOKEN;
+		InputStream inputStream = networkUtils.getStream(getDoctorsURL);
+		ArrayList<Doctor> result = null;
+		try {
+			JsonReader reader = new JsonReader(new InputStreamReader(
+					inputStream, "UTF-8"));
+			result = readDoctorsResponse(reader);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
+	private ArrayList<Doctor> readDoctorsResponse(JsonReader reader)
+			throws IOException {
+		ArrayList<Doctor> result = new ArrayList<Doctor>();
+		reader.beginObject();
+		while (reader.hasNext()) {
+			String name = reader.nextName();
+			if (name.equals("success")) {
+				boolean success = reader.nextBoolean();
+				if (!success)
+					break;
+			} else if (name.equals("data")) {
+				reader.beginArray();
+				while (reader.hasNext()) {
+					Doctor doctor = readDoctorData(reader);
+					if (doctor != null)
+						result.add(doctor);
+				}
+				reader.endArray();
+			} else {
+				reader.skipValue();
+			}
+		}
+		reader.endObject();
+		return result;
+	}
+
+	private Doctor readDoctorData(JsonReader reader) throws IOException {
+		Doctor doctor = new Doctor();
+		reader.beginObject();
+		while (reader.hasNext()) {
+			if (reader.nextName().equals("doctor")) {
+				reader.beginObject();
+				while (reader.hasNext()) {
+					String name = reader.nextName();
+					if (name.equals("id") && reader.peek() != JsonToken.NULL) {
+						doctor.setId(reader.nextInt());
+					} else if (name.equals("name")
+							&& reader.peek() != JsonToken.NULL) {
+						doctor.setName(reader.nextString());
+					} else if (name.equals("phone")
+							&& reader.peek() != JsonToken.NULL) {
+						doctor.setPhoneNumber(reader.nextString());
+					} else if (name.equals("created_at")
+							&& reader.peek() != JsonToken.NULL) {
+						doctor.setCreatedAt(reader.nextString());
+					} else if (name.equals("updated_at")
+							&& reader.peek() != JsonToken.NULL) {
+						doctor.setUpdatedAt(reader.nextString());
+					} else if (name.equals("is_verify")
+							&& reader.peek() != JsonToken.NULL) {
+						doctor.setIsVefified(reader.nextInt());
+					} else if (name.equals("email")
+							&& reader.peek() != JsonToken.NULL) {
+						doctor.setEmail(reader.nextString());
+					} else if (name.equals("created_by")
+							&& reader.peek() != JsonToken.NULL) {
+						doctor.setCreatedBy(reader.nextInt());
+					} else if (name.equals("medical_number")
+							&& reader.peek() != JsonToken.NULL) {
+						doctor.setMedicalNumber(reader.nextInt());
+					} else if (name.equals("address")
+							&& reader.peek() != JsonToken.NULL) {
+						doctor.setAddress(reader.nextString());
+					} else if (name.equals("country")
+							&& reader.peek() != JsonToken.NULL) {
+						doctor.setCountry(reader.nextString());
+					} else if (name.equals("location")
+							&& reader.peek() != JsonToken.NULL) {
+						String location = reader.nextString();
+						// parse location
+					} else {
+						reader.skipValue();
+					}
+				}
+				reader.endObject();
+			} else {
+				reader.skipValue();
+			}
+		}
+		reader.endObject();
+		return doctor;
+	}
+	
+	private ArrayList<LeaveModel> readLeaveResponse(JsonReader reader)
 			throws IOException {
 		ArrayList<LeaveModel> result = new ArrayList<LeaveModel>();
 		reader.beginObject();
